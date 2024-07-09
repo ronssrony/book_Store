@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
-    @products = Product.all
+   @products = Product.all
   end
 
   # GET /products/1 or /products/1.json
@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
   end
+
 
   # POST /products or /products.json
   def create
@@ -43,7 +44,7 @@ class ProductsController < ApplicationController
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+      end   
     end
   end
 
@@ -67,4 +68,5 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:title, :description, :image_url, :price)
     end
+
 end
