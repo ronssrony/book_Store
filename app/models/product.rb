@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
 
-    validates :title,:description,:price,presence:true
+    validates :title,:price,presence:true
     if(:title!=nil)
      validates :title,allow_blank: true , uniqueness:true 
     end
